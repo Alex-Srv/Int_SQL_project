@@ -1,0 +1,2 @@
+
+SELECT TRIM(BOTH '@' FROM  '@@Sarve ALEXANDER@@')
