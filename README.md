@@ -59,7 +59,6 @@ Our current revenue structure is highly top-heavy. While having a strong VIP bas
 - **Volume vs. Value Divergence:** Total cohort revenue remains supported by overall customer acquisition volume, masking the drop in per-customer spending at first purchase.
 
 **💡Business Insights**
-**💡 Business Insights**
 - **Shift in Acquisition Quality:** Newer customer cohorts are spending less on their initial orders, which points to changes in traffic quality, heavier reliance on discounting, or shifts in entry-level product mix.
 - **Need for Onboarding & Upsell Optimization:** Because first-order value sets the baseline for future retention, relying solely on top-line acquisition volume creates a long-term revenue risk if lower initial spenders are not converted into repeat buyers.
 
@@ -68,8 +67,33 @@ Our current revenue structure is highly top-heavy. While having a strong VIP bas
 2. **Audit Acquisition Channels:** Segment recent cohorts (2022–2024) by marketing channel to identify which sources bring lower-value first-time buyers and reallocate budget toward higher-LTV channels.
 3. **Strengthen Post-Purchase Onboarding:** Launch targeted email/loyalty sequences within the first 30 days after a customer's initial purchase to encourage a second order and offset lower entry spend.
 
+### 3. Customer Retention
+- Classified customers as **Active** (purchased within the last 6 months) or **Churned** (no purchases in over 6 months) relative to the dataset's latest order date (`2024-04-20`)
+- Excluded customers acquired within the final 6 months (`first_purchase_date >= '2023-10-20'`) to prevent recency bias from distorting retention rates
+- Aggregated active and churned counts and percentages across annual acquisition cohorts (`2015`–`2023`)
+
+🖥️ Query: [3_retention_analysis.sql](/3_retention_analysis.sql)
+
+**📈 Visualization:**
+
+![Customer Retention and Churn by Cohort Year](/Retention_Analysis.png)
+
+**📊 Key Findings:**
+- **Persistently High Churn (90%–92%):** Across all analyzed cohorts (`2015`–`2023`), overall churn stands at **90.5%** (42,472 churned vs. 4,441 active customers), stabilizing at **90%–91%** in recent years.
+- **Low Baseline Retention (8%–10%):** Active retention remains flat across every cohort—rising only slightly from **8%** in 2015 (237 of 2,825) and **9%** in 2016–2021 to **10%** in 2022 (937 of 9,010) and 2023 (455 of 4,718).
+- **Consistent Cohort Attrition:** Newer cohorts exhibit nearly identical churn rates to older ones, indicating that most customer drop-off happens early in the lifecycle rather than gradually over many years.
+
+**💡 Business Insights**
+- **Transactional "One-and-Done" Behavior:** A ~90% churn rate shows that customers rarely return for repeat purchases after their initial transaction, pointing to weak post-purchase engagement.
+- **Heavy Reliance on New Acquisition:** With only 8%–10% of each cohort remaining active, top-line revenue depends almost entirely on constantly acquiring new buyers, increasing long-term customer acquisition pressure.
+
+## Strategic Recommendations
+1. **Launch Early Lifecycle Re-Engagement:** Target buyers within the first 3–6 months after their initial purchase with automated email sequences, complementary accessory recommendations, and time-limited repeat-order incentives before they cross the 6-month churn mark.
+2. **Prioritize High-Value Win-Back Campaigns:** Cross-reference the 42,472 churned customers with the High-Value segment from `1_customer_segmentation.sql` to focus personalized win-back offers on former VIP buyers.
+3. **Introduce Recurring Value Programs:** Implement loyalty rewards, extended warranty plans, or trade-in programs to encourage repeat visits and extend customer lifetime beyond a single hardware purchase.
+
 
 ## Technical Details
-- **Database:** {insert database here}
-- **Analysis Tools:** {insert tools here}
-- **Visualization:** {insert visualization tools here}
+- **Database:** PostgreSQL (`contoso_100k` dataset)
+- **Analysis Tools:** DBeaver, Visual Studio Code (VS Code)
+- **Visualization:** Gemini AI
