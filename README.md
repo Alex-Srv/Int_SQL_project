@@ -76,7 +76,7 @@ Our current revenue structure is highly top-heavy. While having a strong VIP bas
 
 **📈 Visualization:**
 
-![Customer Retention and Churn by Cohort Year](/Retention_Analysis.png)
+![Customer Retention and Churn by Cohort Year](/Retention_Analysis.png?raw=true)
 
 **📊 Key Findings:**
 - **Persistently High Churn (90%–92%):** Across all analyzed cohorts (`2015`–`2023`), overall churn stands at **90.5%** (42,472 churned vs. 4,441 active customers), stabilizing at **90%–91%** in recent years.
